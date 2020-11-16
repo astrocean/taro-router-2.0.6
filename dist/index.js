@@ -1944,7 +1944,7 @@ var createHistory = function createHistory(props) {
 
   function getUserConfirmation(next, fromLocation, toLocation) {
     var currentRoute = getCurrentRoute();
-    var leaveHook = currentRoute.beforeRouteLeave;
+    var leaveHook = currentRoute&&currentRoute.beforeRouteLeave;
 
     if (typeof leaveHook === 'function') {
       tryToCall(leaveHook, currentRoute, fromLocation, toLocation, next);
